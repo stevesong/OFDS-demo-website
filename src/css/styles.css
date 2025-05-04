@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+#map {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    will-change: transform; /* Hint for browser optimization */
+}
+
+#info-panel {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    background-color: transparent; /* Changed to transparent */
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 3;
+    max-width: 280px;
+    font-size: 13px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  #info-panel h1 {
+    color: white; /* Changed to white */
+    text-align: center; /* Centered text */
+    margin-bottom: 15px;
+  }
+  
+  #legend {
+    background-color: white; /* White background for legend */
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+
+h1 {
+    font-size: 16px;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 14px;
+    margin: 8px 0 5px 0;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 13px;
+    margin: 6px 0 4px 0;
+    font-weight: 500;
+}
+
+p {
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+#legend {
+    margin-top: 10px;
+    max-height: 40vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.legend-section {
+    margin-bottom: 8px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.legend-color {
+    flex: 0 0 14px;
+    height: 12px;
+    margin-right: 6px;
+    border-radius: 2px;
+}
+
+.legend-line {
+    flex: 0 0 14px;
+    height: 0;
+    margin-right: 6px;
+}
+
+em {
+    font-style: italic;
+    color: #666;
+    font-size: 11px;
+}
+
+hr {
+    margin: 8px 0;
+    border: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+}
+
+/* Optimize for mobile displays */
+@media (max-width: 768px) {
+    #info-panel {
+        max-width: 220px;
+        padding: 8px;
+        font-size: 12px;
+    }
+    
+    h1 {
+        font-size: 14px;
+    }
+    
+    h2, h3 {
+        font-size: 12px;
+    }
+    
+    #legend {
+        max-height: 30vh;
+    }
+}
+
+/* Reduce animation when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    #legend {
+        scroll-behavior: auto;
+    }
+}
